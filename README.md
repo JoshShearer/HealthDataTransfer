@@ -1,5 +1,5 @@
 # Health Data Transfer
-This script will take various health data as described below and input the data into Cronometer.  The script will navigate throught the Cronometer pages based on the oldest to the newest dates.  
+This script will take various health data as described below and input the data into Cronometer.  The script will navigate through the Cronometer pages based on the oldest to the newest dates.  
 
 ## Warning
 
