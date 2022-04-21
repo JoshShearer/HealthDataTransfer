@@ -35,11 +35,3 @@ In the root directory:
     * Date,Meal,Energy,Fat (g),Saturated,Polyunsaturated,Monounsaturated,Trans-Fat,Cholesterol,Sodium (mg),Potassium,Carbohydrates (g),Fiber,Sugars,Protein (g),Vitamin A,Vitamin C,Calcium,Iron,Note
     * 6/28/2011,Breakfast,415,9.5,3,4,1,0,75,230,1050,53,8,33,36,87,165,55,106,
 * chromedriver.exe => required.  Make sure the version of chromedriver matches the version of your chrome browser
-
-
-## Available Scripts
-
-    "build": "npm run build --prefix client",
-    "start": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon server.js\" \"npm run client\""
