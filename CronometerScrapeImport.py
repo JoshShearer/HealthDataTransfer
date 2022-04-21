@@ -746,8 +746,8 @@ df_nutrition_data = df_nutrition_data.sort_values(['Date','Meal'], ascending=[Tr
 df_nutrition_data = df_nutrition_data.set_index("Date", drop = False)
 
 # Login to site and navigate to data entry area
-Email = "joshshear@gmail.com" #Will need to be changed for your account
-Password = 'fatty999' # Will need to change for your account
+Email = "youremail@gmail.com" #Will need to be changed for your account
+Password = 'yourpassword' # Will need to change for your account
 
 
 # instantiate a chrome options object so you can set the size and headless preference
@@ -794,19 +794,14 @@ for i, row in df_nutrition_data.iterrows():
         print("Uploading data for " + row.filename + " => " + str(row.Date))
         if current_date != row.Date:
             driver = webpage_nav(row.Date, driver)
-        if (#row.filename == 'BloodNutrientTracking.csv' or
-        #     row.filename == 'Measurement-Summary.csv' or
+        if (row.filename == 'BloodNutrientTracking.csv' or
+             row.filename == 'Measurement-Summary.csv' or
             row.filename == 'LabResults.csv'):
             driver = enter_biometric_data(row, driver)
-        # elif row.filename == 'Activities.csv':
-        #     driver = enter_exercise_data(row,driver)
-        # if row.filename == 'Nutrition-Summary.csv':
-        #     driver = add_food_data(row, driver)
-            # driver = delete_table_data(row, driver)
+        elif row.filename == 'Activities.csv':
+            driver = enter_exercise_data(row,driver)
+        if row.filename == 'Nutrition-Summary.csv':
+            driver = add_food_data(row, driver)
+            driver = delete_table_data(row, driver)
         current_date = row.Date
 
-
-#functional testing for breakage
-# class MyTest(unittest.TestCase):
-#     def test(self):
-#         self.assertEqual()
